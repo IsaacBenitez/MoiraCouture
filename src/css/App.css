@@ -16,3 +16,10 @@ html {
 .links {
     color: var(--colorWhite) !important;
 }
+
+.hero-img,
+img {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
