@@ -1,0 +1,18 @@
+:root {
+    --colorHtml: #EEEEEE;
+    --colorHeaderFooter: #000000;
+    --colorWhite: #ffffff;
+
+}
+
+html {
+    background-color: var(--colorHtml);
+}
+
+.ContenedorHeader {
+    background-color: var(--colorHeaderFooter);
+}
+
+.links {
+    color: var(--colorWhite) !important;
+}
