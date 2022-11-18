@@ -4,22 +4,24 @@ import shoppingCart from '../../assets/icons/shoppingCart.svg';
 import AppContext from '../../context/AppContext';
 
 
-	const ProductItem = ({product}) => {
+	const ProductItemMujer = ({product}) => {
 		const{ addCart} = useContext(AppContext);     
 		const handleClick = item => {
 			addCart(item);
 		} 
 	
-	
+		
+	if(product.sexo==="F"){
 	
 
 	return (
 		<div className="ProductItem">
-			<img src={product.images[0]} alt={product.title} />
+			<img src={product.imagen} alt={product.descripcion} />
 			<div className="product-info">
 				<div>
-					<p>${product.price}</p>
-					<p>{product.title}</p>
+					<p>${product.precio}</p>	
+					<p>{product.talla}</p>	
+					<p>{product.descripcion}</p>									
 				</div>
 				<figure onClick={() => handleClick(product)} >
 					<img src={shoppingCart} alt="" />
@@ -28,6 +30,6 @@ import AppContext from '../../context/AppContext';
 			</div>
 		</div>
 	);
-}
+}  }
 
-export default ProductItem;
+export default ProductItemMujer;

@@ -1,12 +1,71 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { Link } from "react-router-dom";
 
 
 
-function Register() {
+const FormRegister = () => {
+  const form = useRef(null);
+ 
+
+  const handleSubmit = (event) => {
+  event.preventDefault();
+      const formData = new FormData(form.current); 
+      const data = {
+          name: formData.get('nombre'),
+          lastname: formData.get('apellido'),  //TODO CONTRASENA, CORREO, NACIMIENTO, NOMBRE, APELLIDO
+          email: formData.get('correo'),
+          password: formData.get('password'),
+          birthDate: formData.get('birthDate')
+      }
+      console.log(data);  //TODO
+  }
+
+
+
+
+
   return (  <div>
       
     
-    <h1>Ingresar datos para registrarse</h1>
+      <form action="/" className="form" ref={form}>
+  <div className="form-row">
+    <div className="col-md-4 mb-3">
+      <label htmlFor="nombre">Nombre</label>
+      <input name="nombre" type="text" className="form-control" id="validationDefault01" placeholder="Nombre"  required/>
+    </div>
+    <div className="col-md-4 mb-3">
+      <label htmlFor="apellido">Apellido</label>
+      <input name="apellido"  type="text" className="form-control" id="validationDefault02" placeholder="Apellido" required/>
+    </div>
+    <div className="col-md-4 mb-3">
+      <label htmlFor="correo">Correo</label>
+      <div className="input-group">
+        <div className="input-group-prepend">
+          <span className="input-group-text" id="inputGroupPrepend2">@</span>
+        </div>
+        <input name="correo" type="text" className="form-control" id="validationDefaultCorreo" placeholder="Correo Electronico" 
+        aria-describedby="inputGroupPrepend2" required/>
+        <input name="password" type="password" className="form-control" id="validationDefaultPassword" placeholder="Password" 
+        aria-describedby="inputGroupPrepend2" required/>
+      </div>
+    </div>
+  </div>
+  <div className="form-row">
+    <div className="col-md-6 mb-3">
+      <label htmlFor="birthDate">Fecha de nacimiento</label>
+      <input name="birthDate" type="date" className="form-control" id="validationDefault03" placeholder="Fecha de nacimiento" required/>
+    </div>
+  </div>
+  <div className="form-group">
+    <div className="form-check">
+      <input className="form-check-input" type="checkbox" value="" id="invalidCheck2" required/>
+      <label className="form-check-label" htmlFor="invalidCheck2">
+        Estoy de acuerdo con el tratamiento de mis datos
+      </label>
+    </div>
+  </div>
+  <button className="btn btn-primary" type="submit" onClick={handleSubmit} >Registrarse</button>
+</form>
    
  
   </div>
@@ -14,5 +73,5 @@ function Register() {
   
 }
 
-export default Register;
+export default FormRegister;
 

@@ -23,7 +23,7 @@ const Login = () => {
 			<div className="Login-container">
 				{/* <img src={"saas"} alt="logo" className="logo" /> */}
 				<form action="/" className="form" ref={form}>
-					<label htmlFor="email" className="label">Email address</label>
+					<label htmlFor="email" className="label">Correo</label>
 					<input type="text" name="email" placeholder="correo@example.com" className="input input-email" />
 					<label htmlFor="password" className="label">Password</label>
 					<input type="password" name="password" placeholder="*********" className="input input-password" />

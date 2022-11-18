@@ -21,22 +21,22 @@ const Header = () => {
         <div className='ContenedorHeader'>
             <div className="container py-2">
                 <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-                    <a href="/" className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-light text-decoration-none">
+                    <div className="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-light text-decoration-none">
                         <svg width="40" height="33" viewBox="0 0 40 33" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect width="40" height="32" rx="5" fill="#212529" />
                             <path d="M11.1445 6.09375H13.7012L20.2227 22.3223L26.7305 6.09375H29.3008L21.207 26H19.2109L11.1445 6.09375ZM10.3105 6.09375H12.5664L12.9355 18.2344V26H10.3105V6.09375ZM27.8652 6.09375H30.1211V26H27.4961V18.2344L27.8652 6.09375Z" fill="white" />
                         </svg>
-                    </a>
+                    </div>
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="/" className="links border-bottom nav-link link-secondary me-3"><Link to={"/"} className="link-secondary">
+                        <li><div  className="links border-bottom nav-link link-secondary me-3"><Link to={"/"} className="link-secondary">
                     Home
-                </Link></a></li>
-                        <li><a href="/" className="links nav-link link-secondary me-3"><Link to={"/Hombre"} className="link-secondary">
+                </Link></div></li>
+                        <li><div  className="links nav-link link-secondary me-3"><Link to={"/Hombre"} className="link-secondary">
                     Hombre
-                </Link></a></li>
-                        <li><a href="/" className="links nav-link link-secondary me-3"><Link to={"/Mujer"} className="link-secondary">
+                </Link></div></li>
+                        <li><div  className="links nav-link link-secondary me-3"><Link to={"/Mujer"} className="link-secondary">
                     Mujer
-                </Link></a></li>
+                </Link></div></li>
                     </ul>
                     <div className="col-md-3 text-end">
                         <button type="button" className="btn btn-outline-light me-3"><Link to={"/Login"} className="link-secondary">

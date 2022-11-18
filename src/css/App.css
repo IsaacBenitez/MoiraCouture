@@ -60,3 +60,10 @@ img {
   }
 
 
+  
+
+  .ContenedorFooter {
+    background-color: var(--colorHeaderFooter);
+  }
+
+  

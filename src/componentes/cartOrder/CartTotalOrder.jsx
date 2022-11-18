@@ -3,13 +3,15 @@ import CartOrderItem from './CartOrderItem';
 import AppContext from '../../context/AppContext';
 import '../../styles/CartTotalOrder.scss';
 
+import icon from '../../assets/icons/icon_close.png';
+
 
 const CartTotalOrder = () => {
 
 	const {state} = useContext(AppContext);
 
 	const totalOrder = () => {
-		const reducer = (counter, actualValue) => counter + actualValue.price;
+		const reducer = (counter, actualValue) => counter + actualValue.precio;
 		const sum = state.cart.reduce(reducer, 0);
 		return sum;
 	}
@@ -18,7 +20,7 @@ const CartTotalOrder = () => {
 	return (
 		<aside className="CartTotalOrder">
 			<div className="title-container">
-				<img src={"jjk"} alt="arrow" />
+				{/* <img src={"jjk"} alt="arrow TODO" /> */}
 				<p className="title">My order</p>
 			</div>
 			<div className="my-order-content">

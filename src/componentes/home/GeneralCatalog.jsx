@@ -2,14 +2,14 @@ import React from 'react';
 import ProductList from '../Products/ProductList'
 
 
-const Home = () => {
+const GeneralCatalog = (props) => {
 	return (
 		<>
 		
 		
-			<ProductList />
+			< ProductList Genero={props.Genero}/>
 		</>
 	);
 }
 
-export default Home;
+export default GeneralCatalog;
