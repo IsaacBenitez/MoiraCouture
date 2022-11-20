@@ -1,69 +1,75 @@
 :root {
-    --colorHtml: #EEEEEE;
-    --colorHeaderFooter: #000000;
-    --colorWhite: #ffffff;
+  --colorHtml: #EEEEEE;
+  --colorHeaderFooter: #000000;
+  --colorWhite: #ffffff;
 
 }
 
 html {
-    background-color: var(--colorHtml);
+  background-color: var(--colorHtml);
 }
 
 .ContenedorHeader {
-    background-color: var(--colorHeaderFooter);
+  background-color: var(--colorHeaderFooter);
 }
 
 .links {
-    color: var(--colorWhite) !important;
+  color: var(--colorWhite) !important;
 }
 
 .hero-img,
 img {
-    width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Animation Scroll */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #e1e1e1;
-    border: 0px none #ffffff;
-    border-radius: 100px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: #ffffff;
-  }
-  ::-webkit-scrollbar-thumb:active {
-    background: #000000;
-  }
-  ::-webkit-scrollbar-track {
-    background: #666666;
-    border: 0px none #ffffff;
-    border-radius: 50px;
-  }
-  ::-webkit-scrollbar-track:hover {
-    background: #666666;
-  }
-  ::-webkit-scrollbar-track:active {
-    background: #333333;
-  }
-  ::-webkit-scrollbar-corner {
-    background: transparent;
-  }
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #e1e1e1;
+  border: 0px none #ffffff;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 
 
-  
 
-  .ContenedorFooter {
-    background-color: var(--colorHeaderFooter);
-  }
 
-  
+.ContenedorFooter {
+  background-color: var(--colorHeaderFooter);
+}

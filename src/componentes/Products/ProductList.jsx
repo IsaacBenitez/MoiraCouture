@@ -17,34 +17,37 @@ const exampleJson = ExampleData;  //MODIFY
 
 const ProductList = (props) => {
 
-    const products = useGetProducts(exampleJson);//MODIFY
-	if(props.Genero==="Mujer"){
+	const products = useGetProducts(exampleJson);//MODIFY
+	if (props.Genero === "Mujer") {
 
-	return (
-		
-		<section className="main-container">
-			<div className="ProductList" >
-				{exampleJson2.map(product => (
-					<ProductItem product={product} key={product.id} Genero={props.Genero} />
-				))}
-			</div>
-		</section>
-		
-	);}
+		return (
+
+			<section className="main-container py-3">
+				<h2 class="pb-2 border-bottom text-first mx-5">MUJER</h2>
+				<div className="ProductList py-5" >
+					{exampleJson2.map(product => (
+						<ProductItem product={product} key={product.id} Genero={props.Genero} />
+					))}
+				</div>
+			</section>
+
+		);
+	}
 
 	else
 
-	return (
-		
-		<section className="main-container">
-			<div className="ProductList" >
-				{exampleJson2.map(product => (
-					<ProductItemHombre product={product} key={product.id} Genero={props.Genero} />
-				))}
-			</div>
-		</section>
-		
-	);
+		return (
+
+			<section className="main-container py-3">
+				<h2 class="pb-2 border-bottom text-first mx-5">HOMBRE</h2>
+				<div className="ProductList py-5">
+					{exampleJson2.map(product => (
+						<ProductItemHombre product={product} key={product.id} Genero={props.Genero} />
+					))}
+				</div>
+			</section>
+
+		);
 }
 
 export default ProductList;

@@ -17,31 +17,31 @@ import Footer from './components/footer';
 
 
 // <Route path="/" element={<Home></Home>} /> changed to Cards
-  function App() {
-    const initialState = useInitialState();
-    return (
-      <div className="App">
+function App() {
+  const initialState = useInitialState();
+  return (
+    <div className="App">
 
-        <AppContext.Provider value={initialState}>
-          <div>
-          <Header />
+      <AppContext.Provider value={initialState}>
+        <div>
+          {<Header />}
           <Routes>
             <Route path="/" element={<Cards></Cards>} />
             <Route path="/Hombre" element={<GeneralCatalog />} />
-            <Route  path="/Mujer" element={<GeneralCatalog Genero={"Mujer"} />} />
+            <Route path="/Mujer" element={<GeneralCatalog Genero={"Mujer"} />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
           </Routes>
           <Footer />
-          </div>
-          
-        </AppContext.Provider>
-       
+        </div>
 
-         
-        
-      </div>
-    );
-  }
+      </AppContext.Provider>
+
+
+
+
+    </div>
+  );
+}
 
 export default App;

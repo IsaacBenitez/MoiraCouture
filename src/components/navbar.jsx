@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Navbar(props) {
+/* function Navbar(props) {
     return (
         <div className='ContenedorHeader'>
             <div className="container py-2">
@@ -50,6 +50,6 @@ function Navbar(props) {
             </div>
         </div>
     );
-}
+} */
 
 export default Navbar;
