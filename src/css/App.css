@@ -24,6 +24,9 @@ img {
   background-size: cover;
 }
 
+#imgDashboard {
+  width: 20%;
+}
 /* Animation Scroll */
 ::-webkit-scrollbar {
   width: 8px;

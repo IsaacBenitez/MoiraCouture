@@ -1,6 +1,7 @@
 import './App.css';
 import { Route, Routes } from "react-router-dom";
 import Header from './componentes/home/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
 //import StripedColumnsExample from '../src/componentes/FormularioAcceder/formulario';
 import GeneralCatalog from './componentes/home/GeneralCatalog';
 
@@ -13,6 +14,7 @@ import AppContext from './context/AppContext';
 
 import Cards from './componentes/home/Cards';
 import Footer from './components/footer';
+import IndexDashboard from "./componentes/dashboard";
 
 
 
@@ -23,18 +25,17 @@ function App() {
     <div className="App">
 
       <AppContext.Provider value={initialState}>
-        <div>
           {<Header />}
           <Routes>
+
             <Route path="/" element={<Cards></Cards>} />
             <Route path="/Hombre" element={<GeneralCatalog />} />
             <Route path="/Mujer" element={<GeneralCatalog Genero={"Mujer"} />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Register" element={<Register />} />
+            <Route path="/DashboardProductos" element={<IndexDashboard></IndexDashboard>}></Route>
           </Routes>
           <Footer />
-        </div>
-
       </AppContext.Provider>
 
 
