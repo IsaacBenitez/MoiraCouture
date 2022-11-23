@@ -14,10 +14,11 @@ const exampleJson2 = ExampleData2;
 const exampleJson = ExampleData;  //MODIFY
 
 //const API = 'http://api.escuelajs.co/api/v1/products'; //MODIFY
+const PROJECT = 'https://moiracoutureback-production.up.railway.app/api/products';
 
 const ProductList = (props) => {
 
-	const products = useGetProducts(exampleJson);//MODIFY
+	const products = useGetProducts(PROJECT);//MODIFY
 	if (props.Genero === "Mujer") {
 
 		return (
@@ -25,7 +26,7 @@ const ProductList = (props) => {
 			<section className="main-container py-3">
 				<h2 class="pb-2 border-bottom text-first mx-5">MUJER</h2>
 				<div className="ProductList py-5" >
-					{exampleJson2.map(product => (
+					{products.map(product => (
 						<ProductItem product={product} key={product.id} Genero={props.Genero} />
 					))}
 				</div>
@@ -41,7 +42,7 @@ const ProductList = (props) => {
 			<section className="main-container py-3">
 				<h2 class="pb-2 border-bottom text-first mx-5">HOMBRE</h2>
 				<div className="ProductList py-5">
-					{exampleJson2.map(product => (
+					{products.map(product => (
 						<ProductItemHombre product={product} key={product.id} Genero={props.Genero} />
 					))}
 				</div>
