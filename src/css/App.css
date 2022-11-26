@@ -85,6 +85,13 @@ img {
   width: 100vw;
   height: 70vh;
 }
+.Register-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 90vh;
+}
 
 .Auth-form {
   width: 420px;
