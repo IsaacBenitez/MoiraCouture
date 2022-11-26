@@ -9,13 +9,13 @@ function Body(props) {
                     {props.columns.map( (column) => {
                         if (column === "imagen") {
                             return (
-                                <td key={column} className= "align-middle w-25">
+                                <td key={column} className="align-middle w-25">
                                     <img src={row[column]} alt="Imagen producto" width="20%" className="rounded" id="imgDashboard"/>
                                 </td>
                                 )
                         }
                         return (
-                        <td key={column} className= "align-middle">{row[column]}</td>
+                        <td key={column} className="align-middle">{row[column]}</td>
                         )
                     })}
                     <Tools

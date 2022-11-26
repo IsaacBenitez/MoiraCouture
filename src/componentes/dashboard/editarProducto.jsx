@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {PencilSquare} from "react-bootstrap-icons";
-import editProduct from "../requests/editProduct";
+import editProduct from "../../requests/editProduct";
 
 function EditarProducto(props) {
 
@@ -47,42 +47,36 @@ function EditarProducto(props) {
             "imagen": imagen
         }
 
-        // let login = window.localStorage.getItem('login')
-        //
-        // if (login) {
-        //     let token = JSON.parse(login).token
-        //
-        //     try {
+        let login = window.localStorage.getItem('login')
 
-                let data = await editProduct(product, process.env.REACT_APP_TOKEN, producto["id"])
+        if (login) {
+            let token = JSON.parse(login).token
 
-                console.log(data);
+            try {
 
+                let data = await editProduct(product, token, producto["id"])
+                setShow(false);
+                props.editproduct(product, producto["id"]);
                 alert('producto editado correctamente')
 
-                setShow(false);
+            } catch (error) {
 
-                props.editproduct(product, producto["id"]);
+                let { status } = error.response
 
+                if (status === 401) {
+                    let { message } = error.response.data.error;
+                    alert(message)
+                } else if (status === 400) {
+                    let { message } = error.response.data.message;
+                    alert(message)
+                }
 
-        //     } catch (error) {
-        //
-        //         let { status } = error.response
-        //
-        //         if (status === 401) {
-        //             let { message } = error.response.data.error;
-        //             alert(message)
-        //         } else if (status === 400) {
-        //             let { message } = error.response.data.message;
-        //             alert(message)
-        //         }
-        //
-        //         console.log(error)
-        //
-        //     }
-        // } else {
-        //     alert('Inicie sesión')
-        // }
+                console.log(error)
+
+            }
+        } else {
+            alert('Inicie sesión')
+        }
 
 
     }

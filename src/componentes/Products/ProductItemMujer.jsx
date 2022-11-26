@@ -20,7 +20,7 @@ import AppContext from '../../context/AppContext';
 			<div className="product-info">
 				<div>
 					<p>${product.precio}</p>	
-					<p>{product.talla}</p>	
+					<p>Talla {product.talla}</p>
 					<p>{product.descripcion}</p>									
 				</div>
 				<figure onClick={() => handleClick(product)} >

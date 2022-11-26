@@ -1,7 +1,7 @@
 import MainPage from "../table/mainPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import getAllProducts from "../requests/getAllProducts";
-import {useEffect, useState} from "react";
+import getAllProducts from "../../requests/getAllProducts";
+import React, {useEffect, useState} from "react";
 
 function IndexDashboard(props) {
     const [data, setData] = useState([]);
@@ -19,11 +19,11 @@ function IndexDashboard(props) {
     return (
         <div className="mx-5">
             <div>
-                <h3>Gestion del catalogo</h3>
-
+                <h2 className="border-bottom text-center mx-5">GESTIÓN DE PRODUCTOS</h2>
             </div>
             <MainPage
                 data={data}
+                setData={setData}
                 name={"Lista de productos"}
                 columns={["imagen", "categoria", "nombre", "sexo", "talla", "color", "precio", "stock"]}
                 columnsAlias={["Foto", "Categoria", "Nombre", "Sexo", "Talla", "Color", "Precio", "Stock"]}

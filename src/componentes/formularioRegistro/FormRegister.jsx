@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
-import createUser from "../requests/createUser";
+import createUser from "../../requests/createUser";
 
 
 

@@ -11,7 +11,7 @@ async function DeleteProduct(id,token) {
     })
 
     if (res.status === 200) {
-        alert("Producto eliminado")
+        alert("Producto eliminado correctamente")
     }
 }
 

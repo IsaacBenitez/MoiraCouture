@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Modal from 'react-bootstrap/Modal';
-import createProduct from "../requests/createProduct";
+import createProduct from "../../requests/createProduct";
 
 function CrearProducto(props) {
 
@@ -45,15 +45,19 @@ function CrearProducto(props) {
         }
 
 
+        let login = window.localStorage.getItem('login')
+
+        if (login) {
+            let token = JSON.parse(login).token
+
             try {
 
-                let data = await createProduct(product, process.env.REACT_APP_TOKEN)
-
+                let data = await createProduct(product, token)
                 product["id"] = data.id;
-
                 setShow(false);
-
                 props.newproduct(product);
+                alert('producto creado correctamente')
+
 
             } catch (error) {
 
@@ -70,40 +74,9 @@ function CrearProducto(props) {
                 console.log(error)
 
             }
-
-
-        // let login = window.localStorage.getItem('login')
-        //
-        // if (login) {
-        //     let token = JSON.parse(login).token
-        //
-        //     try {
-        //
-        //         let data = await createProduct(product, token)
-        //
-        //         console.log(data);
-        //
-        //         alert('producto creado correctamente')
-        //
-        //
-        //     } catch (error) {
-        //
-        //         let { status } = error.response
-        //
-        //         if (status === 401) {
-        //             let { message } = error.response.data.error;
-        //             alert(message)
-        //         } else if (status === 400) {
-        //             let { message } = error.response.data.message;
-        //             alert(message)
-        //         }
-        //
-        //         console.log(error)
-        //
-        //     }
-        // } else {
-        //     alert('Inicie sesión')
-        // }
+        } else {
+            alert('Inicie sesión')
+        }
 
 
     }
@@ -111,7 +84,7 @@ function CrearProducto(props) {
     return (
         <>
             <button className="btn btn-success" onClick={handleShow}>
-                <b>＋ Agregar articulo</b>
+                <b>＋ Nuevo producto</b>
             </button>
 
             <Modal
@@ -121,7 +94,7 @@ function CrearProducto(props) {
                 keyboard={false}
             >
                 <Modal.Header closeButton>
-                    <Modal.Title>Crear Producto</Modal.Title>
+                    <Modal.Title>Agregar producto</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form id="editProduct" onSubmit={handleSubmit}>

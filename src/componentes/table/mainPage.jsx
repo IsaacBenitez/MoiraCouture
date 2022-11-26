@@ -11,26 +11,29 @@ function MainPage(props) {
     // esta pendiente de cargar el componente cada que reciba datos
     useEffect(() => {
         if(props.data){
-            setData(props.data)
-        console.log("settie data")}
+            setData(props.data)}
     },[props.data])
 
+
     function newProduct(product){
-        setData([...data, product])
+        props.setData([...props.data, product])
     }
 
     function delProduct(idProduct){
-        const newData = data.filter(producto => producto.id !== idProduct);
-        setData(newData)
+        const productIndex = props.data.findIndex(producto => producto.id === idProduct);
+        props.data.splice(productIndex,1)
+        setData(props.data)
+        setReload(!reload)
     }
 
     function editProduct(editedProduct, idProduct){
         editedProduct["id"] = idProduct;
-        const productIndex = data.findIndex(producto => producto.id === editedProduct.id);
-        data[productIndex] = editedProduct
+        const productIndex = props.data.findIndex(producto => producto.id === editedProduct.id);
+        props.data[productIndex] = editedProduct
+        setData(props.data)
         setReload(!reload)
-    }
 
+    }
 
     return (
         <div>

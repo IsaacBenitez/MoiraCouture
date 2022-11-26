@@ -1,41 +1,71 @@
-import React, { useRef } from 'react';
-import { Link } from "react-router-dom";
+import React, {useState} from 'react'
+import login from '../../requests/login'
 
 
+function LoginForm() {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-const Login = () => {
-    const form = useRef(null);
-   
+    async function handelSubmit(event) {
+        event.preventDefault()
 
-    const handleSubmit = (event) => {
-		event.preventDefault();
-        const formData = new FormData(form.current); 
-        const data = {
-            username: formData.get('email'),
-            password: formData.get('password')
+        const user = {
+            email: email,
+            password: password,
         }
-        console.log(data);
+
+        try {
+            let data = await login(user)
+            console.log(data);
+
+            window.localStorage.setItem('login', JSON.stringify(data))
+
+            setEmail("")
+            setPassword("")
+        } catch (error) {
+
+
+            let {data} = error.response;
+            alert(data.error)
+
+        }
+
     }
 
-
-	return (
-		<div className="Login mx-3 my-3 w-50 mx-auto">
-			<div className="Login-container">
-				{/* <img src={"saas"} alt="logo" className="logo" /> */}
-				<form action="/" className="form" ref={form}>
-					<label htmlFor="email" className="label">Correo</label>
-					<input type="text" name="email" placeholder="correo@example.com" className="input input-email" />
-					<label htmlFor="password" className="label">Password</label>
-					<input type="password" name="password" placeholder="*********" className="input input-password" />
-					<button className="primary-button login-button" onClick={handleSubmit}>Log in</button>
-					<a href="/">Forgot my password</a>
-				</form>
-				<button className="secondary-button signup-button"  ><Link to={"/Register"} className="link-secondary">
-                    Sign-up
-                </Link></button>
-			</div>
-		</div>
-	);
+    return (
+        <div className="Auth-form-container">
+            <form className="Auth-form" onSubmit={handelSubmit}>
+                <div className="Auth-form-content">
+                    <h3 className="Auth-form-title">Sign In</h3>
+                    <div className="form-group mt-3">
+                        <label>Email address</label>
+                        <input
+                            type="email"
+                            className="form-control mt-1"
+                            placeholder="Enter email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className="form-group mt-3">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            className="form-control mt-1"
+                            placeholder="Enter password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className="d-grid gap-2 mt-3">
+                        <button type="submit" className="btn btn-dark">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+)
 }
 
-export default Login;
+export default LoginForm

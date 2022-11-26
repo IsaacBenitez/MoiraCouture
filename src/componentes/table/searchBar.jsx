@@ -1,9 +1,12 @@
-import { useState } from "react";
+import {useState} from "react";
 
-function SearchBar({ setData, data, columns }) {
-    const [searchField, setSearchField] = useState("");
-    let onChangeSearchField = (e) => {
+function SearchBar({ setData, data, columns}) {
+
+    const [searchField, setSearchField] = useState('');
+
+    const onChangeSearchField = (e) => {
         setSearchField(e.target.value);
+        console.log(e.target.value)
         let results = Search(data, columns, e.target.value);
         setData(results);
     };
@@ -30,8 +33,7 @@ function Search(data, columns, search) {
                 value[column]
                     .toString()
                     .toLowerCase()
-                    .indexOf(search.toString().toLowerCase()) >= 0 &&
-                !included
+                    .indexOf(search.toString().toLowerCase()) >= 0 && !included && column != "imagen"
             ) {
                 results.push(value);
                 included = true;
