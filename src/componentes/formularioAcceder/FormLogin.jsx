@@ -1,10 +1,13 @@
 import React, {useState} from 'react'
 import login from '../../requests/login'
+import {useNavigate} from "react-router-dom";
+import jwtDecode from "jwt-decode";
 
 
-function LoginForm() {
+function LoginForm(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
 
     async function handelSubmit(event) {
         event.preventDefault()
@@ -16,12 +19,22 @@ function LoginForm() {
 
         try {
             let data = await login(user)
-            console.log(data);
 
             window.localStorage.setItem('login', JSON.stringify(data))
 
             setEmail("")
             setPassword("")
+
+            alert("Bienvenido " + user.email)
+            props.setIsLogged(true)
+            let infoUser = window.localStorage.getItem('login')
+            let token = JSON.parse(infoUser).token
+            let rol = jwtDecode(token).rol
+            if (rol === "cliente") {
+                return (navigate("/"))
+            } else if (rol === "admin") {
+                return (navigate("/DashboardProductos"))
+            }
         } catch (error) {
 
 

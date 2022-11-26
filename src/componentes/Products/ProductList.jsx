@@ -16,7 +16,7 @@ const ProductList = (props) => {
 		return (
 
 			<section className="main-container py-3">
-				<h2 class="pb-2 border-bottom text-first mx-5">MUJER</h2>
+				<h2 className="pb-2 border-bottom text-first mx-5">MUJER</h2>
 				<div className="ProductList py-5" >
 					{products.map(product => (
 						<ProductItem product={product} key={product.id} Genero={props.Genero} />

@@ -13,9 +13,6 @@ function IndexDashboard(props) {
         })
     }, []);
 
-
-    console.log(data)
-
     return (
         <div className="mx-5">
             <div>
