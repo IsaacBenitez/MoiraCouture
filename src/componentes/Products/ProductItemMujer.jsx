@@ -24,7 +24,7 @@ import AppContext from '../../context/AppContext';
 					<p>{product.descripcion}</p>									
 				</div>
 				<figure onClick={() => handleClick(product)} >
-					<img src={shoppingCart} alt="" />
+					<img src={shoppingCart} alt="ShoppingCart" className="Cart"/>
 				</figure>
 				
 			</div>

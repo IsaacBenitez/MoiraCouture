@@ -78,7 +78,7 @@ const Header = (props) => {
                                         Login
                                     </Link>
                                 </button>
-                                <button type="button" className="btn btn-light me-3" onClick={handleClickChange}>
+                                <button type="button" className="btn btn-light me-3" >
                                     <Link to={"/Register"} className="link-secondary">
                                         Sign-up
                                     </Link>
@@ -125,7 +125,7 @@ const Header = (props) => {
                         fontSize: '25px',
                         backgroundColor: 'black',
                         color: 'white',
-                    }}>Bienvenido</h1>}{clickChangeOrders && <CartTotalOrder/>}
+                    }}></h1>}{clickChangeOrders && <CartTotalOrder/>}
 
                 </header>
             </div>
