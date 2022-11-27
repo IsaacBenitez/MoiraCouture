@@ -1,11 +1,11 @@
 import React, {useRef} from 'react';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import createUser from "../../requests/createUser";
 
 
 const FormRegister = () => {
     const form = useRef(null);
-
+    const navigate = useNavigate();
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -22,7 +22,8 @@ const FormRegister = () => {
         try {
 
             let dataGuardada = await createUser(data)
-
+            alert("Se ha registrado exitosamente")
+            return (navigate("/Login"))
 
         } catch (error) {
 
