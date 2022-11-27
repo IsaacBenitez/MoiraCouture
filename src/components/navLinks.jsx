@@ -6,12 +6,12 @@ function NavLinks(props) {
 
             <li>
                 <Link to={"/"}
-                    className="links border-bottom nav-link link-secondary me-3">Home
+                    className="links nav-link link-secondary me-3">Home
                 </Link>
             </li>
 
             <li>
-                <Link to={"/hombre"}
+                <Link to={"/Hombre"}
                     className="links nav-link link-secondary me-3">Hombre
                 </Link>
             </li>
