@@ -42,24 +42,24 @@ const Header = (props) => {
                     <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 
                         <li>
-                            <div className=" me-5 fs-5">
+                            <div className=" me-4 fs-6">
                                 <Link to={"/"} className="links nav-link ">
-                                    Home
+                                    HOME
                                 </Link>
                             </div>
                         </li>
                         <li>
-                            <div className=" me-5 fs-5">
+                            <div className=" me-4 fs-6">
                                 <Link to={"/Hombre"} className="links nav-link ">
-                                    Hombre
+                                    HOMBRE
                                 </Link>
                             </div>
                         </li>
 
                         <li>
-                            <div className=" me-5 fs-5">
+                            <div className=" me-4 fs-6">
                                 <Link to={"/Mujer"} className="links nav-link ">
-                                    Mujer
+                                    MUJER
                                 </Link>
                             </div>
                         </li>
@@ -113,7 +113,7 @@ const Header = (props) => {
 
 
                             <span style={{cursor: 'pointer'}} onClick={() => setClickChangeOrders(!clickChangeOrders)} >
-                              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                    className="links bi bi-handbag" viewBox="0 0 16 16">
                               <path
                                   d="M8 1a2 2 0 0 1 2 2v2H6V3a2 2 0 0 1 2-2zm3 4V3a3 3 0 1 0-6 0v2H3.36a1.5 1.5 0 0 0-1.483 1.277L.85 13.13A2.5 2.5 0 0 0 3.322 16h9.355a2.5 2.5 0 0 0 2.473-2.87l-1.028-6.853A1.5 1.5 0 0 0 12.64 5H11zm-1 1v1.5a.5.5 0 0 0 1 0V6h1.639a.5.5 0 0 1 .494.426l1.028 6.851A1.5 1.5 0 0 1 12.678 15H3.322a1.5 1.5 0 0 1-1.483-1.723l1.028-6.851A.5.5 0 0 1 3.36 6H5v1.5a.5.5 0 1 0 1 0V6h4z"/>

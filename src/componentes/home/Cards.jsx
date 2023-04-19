@@ -5,22 +5,18 @@ import mujer from '../../assets/icons/mujer.png';
 import '../../css/App.css';
 import {Link} from "react-router-dom";
 import React, {useEffect} from "react";
-import carousel from "bootstrap/js/src/carousel";
-/* global bootstrap */
+
 
 function Cards(props) {
     return (
 <div >
-    <div id="carouselExampleRide" className="carousel slide" data-bs-ride="true">
+    <div id="carouselExampleRide" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
             <div className="carousel-item active">
                 <img src="https://res.cloudinary.com/ddonlrenm/image/upload/v1681867681/hero_o9pbjq.png" className="d-block w-100" alt="compadres posando"/>
             </div>
             <div className="carousel-item">
-                <img src="https://res.cloudinary.com/ddonlrenm/image/upload/c_scale,h_2160,w_3840/v1681871028/retrato-elegante-pareja-joven-interracial-mirando-camara_1_hmqhf5.jpg" className="d-block w-100" alt="pareja posando"/>
-            </div>
-            <div className="carousel-item">
-                <img src="https://res.cloudinary.com/ddonlrenm/image/upload/c_scale,h_2160,w_3840/v1681871011/foco-superficial-dos-hombres-negros-pie-contra-pared-roja_1_syqbgg.jpg" className="d-block w-100" alt="amigos morenos posando"/>
+                <img src="https://res.cloudinary.com/ddonlrenm/image/upload/c_scale,h_1080,w_1920/v1681871011/foco-superficial-dos-hombres-negros-pie-contra-pared-roja_1_syqbgg.jpg" className="d-block w-100" alt="amigos morenos posando"/>
             </div>
             <div className="carousel-item">
                 <img src="https://res.cloudinary.com/ddonlrenm/image/upload/v1681867298/165903-beauty-carla_ossa-model-couch-shoulder-1280x720_popotb.jpg" className="d-block w-100" alt="carla posando"/>
