@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/ProductList.scss'; //TODO
-import ProductItem from './ProductItemMujer';
-import useGetProducts from '../../customHooks/useGetProducts';
-import ProductItemMujer from './ProductItemHombre';
+import ProductItemMujer from './ProductItemMujer';
 import ProductItemHombre from './ProductItemHombre';
+import getAllProducts from "../../requests/getAllProducts";
 
-//const API = 'http://api.escuelajs.co/api/v1/products'; //MODIFY
-const PROJECT = 'http://localhost:9000/api/products';
 
 const ProductList = (props) => {
+	const [data, setData] = useState([]);
 
-	const products = useGetProducts(PROJECT);//MODIFY
+	//COGER DATOS DE MONGO
+	useEffect(() => {
+		getAllProducts().then(result => {
+			setData(result)
+		})
+	}, []);
+
 	if (props.Genero === "Mujer") {
 
 		return (
@@ -18,8 +22,8 @@ const ProductList = (props) => {
 			<section className="main-container py-3">
 				<h2 className="pb-2 border-bottom text-first mx-5">MUJER</h2>
 				<div className="ProductList py-5" >
-					{products.map(product => (
-						<ProductItem product={product} key={product.id} Genero={props.Genero} />
+					{data.map(product => (
+						<ProductItemMujer product={product} key={product.id} Genero={props.Genero} />
 					))}
 				</div>
 			</section>
@@ -34,7 +38,7 @@ const ProductList = (props) => {
 			<section className="main-container py-3">
 				<h2 class="pb-2 border-bottom text-first mx-5">HOMBRE</h2>
 				<div className="ProductList py-5">
-					{products.map(product => (
+					{data.map(product => (
 						<ProductItemHombre product={product} key={product.id} Genero={props.Genero} />
 					))}
 				</div>

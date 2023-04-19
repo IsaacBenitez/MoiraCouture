@@ -4,7 +4,7 @@ async function createUser(user) {
 
     let { data } = await axios({
         method: 'post',
-        baseURL: 'http://localhost:9000/api/users',
+        baseURL: 'https://moiracouture-api.vercel.app/api/users',
         data: user
     })
 

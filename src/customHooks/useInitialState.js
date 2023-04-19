@@ -10,7 +10,7 @@ const useInitialState = () => {
 
     const addCart = (product) => {
         setState({
-            ...state, cart: [...state.cart, { ...product, idCart:state.cart.length+1}, ]  //TODO
+            ...state, cart: [...state.cart, { ...product, idCart:state.cart.length+1}, ]
         });
 
     };
@@ -19,10 +19,10 @@ const useInitialState = () => {
 
 
 
-    const removeFromCart = (product) => {//TODO
+    const removeFromCart = (product) => {
         setState({
             ...state,
-             cart: state.cart.filter((items) => items.idCart !== product.idCart), //TODO
+             cart: state.cart.filter((items) => items.idCart !== product.idCart),
         });
     }
         
