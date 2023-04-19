@@ -1,11 +1,12 @@
 
 .ProductList {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, 380px);
-	gap: 30px;
+	grid-template-columns: repeat(auto-fill, 25%);
+	grid-gap: 0px;
 	place-content: center;
-	margin: 1em 0 0 0;
+	margin: 0 0 0 0;
 	background-color: white;
+	padding-left: 80px;
 }
 
 @media (max-width: 640px) {

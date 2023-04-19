@@ -16,7 +16,7 @@ function IndexDashboard(props) {
     return (
         <div className="mx-5">
             <div>
-                <h2 className="border-bottom text-center mx-5">GESTIÓN DE PRODUCTOS</h2>
+                <h2 className="border-bottom text-center mx-5 py-2">GESTIÓN DEL CATÁLOGO DE PRODUCTOS</h2>
             </div>
             <MainPage
                 data={data}

@@ -16,17 +16,18 @@ import AppContext from '../../context/AppContext';
 
 	return (
 		<div className="ProductItem">
-			<img src={product.imagen} alt={product.descripcion} />
+			<div className="position-relative">
+				<img className="img-fluid" src={product.imagen} alt={product.descripcion} />
+				<div style={{cursor: 'pointer'}} className="position-absolute bottom-0 start-0 end-0 py-0 bg-dark bg-opacity-100 text-center product-card__overlay" onClick={() => handleClick(product)}>
+					<button className="btn fw-semibold text-white" variant="light">Agregar a la bolsa</button>
+				</div>
+			</div>
 			<div className="product-info">
 				<div>
-					<p>${product.precio}</p>	
-					<p>Talla {product.talla}</p>
-					<p>{product.descripcion}</p>									
+					<p className="fw-bold">{product.nombre}</p>
+					<p>${product.precio}</p>
+					{/*<p>Talla {product.talla}</p>*/}
 				</div>
-				<figure onClick={() => handleClick(product)} >
-					<img src={shoppingCart} alt="ShoppingCart" className="Cart"/>
-				</figure>
-				
 			</div>
 		</div>
 	);

@@ -20,8 +20,7 @@ const CartTotalOrder = () => {
 	return (
 		<aside className="CartTotalOrder py-3">
 			<div className="title-container">
-				{/* <img src={"jjk"} alt="arrow TODO" /> */}
-				<p className="title"> MI PEDIDO</p>
+				<h5>TUS PRODUCTOS</h5>
 			</div>
 			<div className="my-order-content">
 
@@ -30,9 +29,9 @@ const CartTotalOrder = () => {
 
 				))}
 
-				<div className="order py-5">
+				<div className="order py-0 " >
 					<p>
-						<span>Total</span>
+						<span >Total</span>
 					</p>
 					<p>${totalOrder()}</p>
 				</div>

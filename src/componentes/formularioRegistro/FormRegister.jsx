@@ -27,7 +27,7 @@ const FormRegister = () => {
 
         } catch (error) {
 
-            let {status} = error.response
+            let {status} = error.response;
 
             if (status === 401) {
                 let {message} = error.response.data.error;
@@ -40,7 +40,7 @@ const FormRegister = () => {
             console.log(error)
 
         }
-        console.log(data);  //TODO
+        console.log(data);
     }
 
 

@@ -120,3 +120,22 @@ label {
   font-weight: 600;
   color: rgb(34, 34, 34);
 }
+
+.image-hover-effect {
+  transition: all 0.5s ease; /* adds a smooth transition effect */
+}
+
+.image-hover-effect:hover {
+  opacity: 0.7; /* reduces the opacity of the image when hovered */
+  transform: scale(1.1); /* scales up the size of the image when hovered */
+}
+
+.product-card__overlay {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.position-relative:hover .product-card__overlay {
+  opacity: 1;
+}
+

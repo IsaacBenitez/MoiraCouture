@@ -33,10 +33,10 @@ const CartOrderItem = ({ product }) => {
 			<figure>
 				<img src={product.imagen} alt={product.descripcion} />
 			</figure>
-			<p>{product.descripcion}</p>
-			<p>{product.precio}</p>
-			{/* <img src={icon} alt="close" onClick={ () =>handleRemove(product)}/ TODO> */}
+			<p className="fw-bold">{product.nombre}</p>
+			<p>${product.precio}</p>
 			<button alt="close" onClick={() => handleRemove(product)}><XLg/></button>
+
 		</div>
 	);
 }

@@ -6,7 +6,7 @@ import ProductItemMujer from './ProductItemHombre';
 import ProductItemHombre from './ProductItemHombre';
 
 //const API = 'http://api.escuelajs.co/api/v1/products'; //MODIFY
-const PROJECT = 'https://moiracoutureback-production.up.railway.app/api/products';
+const PROJECT = 'http://localhost:9000/api/products';
 
 const ProductList = (props) => {
 
