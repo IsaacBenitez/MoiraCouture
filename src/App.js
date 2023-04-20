@@ -1,5 +1,5 @@
 import './css/App.css'
-import {Route, Routes, Navigate} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import Header from './componentes/home/Header';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GeneralCatalog from './componentes/home/GeneralCatalog';
@@ -11,7 +11,7 @@ import useInitialState from './customHooks/useInitialState';
 import AppContext from './context/AppContext';
 
 import Cards from './componentes/home/Cards';
-import Footer from './components/footer';
+import Footer from './componentes/home/footer';
 import IndexDashboard from "./componentes/dashboard";
 import LoginForm from "./componentes/formularioAcceder/FormLogin";
 import PrivateRoute from "./componentes/PrivateRoute/PrivateRoute";
@@ -19,7 +19,6 @@ import {useEffect, useState} from "react";
 import jwtDecode from "jwt-decode";
 
 
-// <Route path="/" element={<Home></Home>} /> changed to Cards
 function App() {
     const [isLogged, setIsLogged] = useState(false);
     const [rol, setRol] = useState('');

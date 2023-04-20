@@ -1,4 +1,3 @@
-import NavLinks from "./navLinks";
 
 function Footer(props) {
     return (
