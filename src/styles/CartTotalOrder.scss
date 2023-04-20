@@ -1,21 +1,23 @@
 .CartTotalOrder {
 	width: 380px;
+	min-height: 380px;
+	max-height: 600px;
 	padding: 28px;
 	box-sizing: border-box;
 	position: absolute;
 	right: 0;
-	background-color: white;
-	top: 60px;
-	bottom: 50px;
+	top: 53%;
 	border-radius: 10px;
 	border: 1px solid;
 	background-color: rgb(255, 255, 255);
-	overflow: scroll;
+	overflow: auto;
 	z-index: 9999;
 }
 
+
 .title-container {
-	display: flex;
+	text-align: center;
+	padding-bottom: 5%;
 }
 
 .title-container img {
@@ -57,6 +59,7 @@
 .primary-button {
 	background-color: rgb(255, 255, 255);
 	border-radius: 8px;
+	margin-bottom: 15px;
 	color: black;
 	width: 100%;
 	cursor: pointer;

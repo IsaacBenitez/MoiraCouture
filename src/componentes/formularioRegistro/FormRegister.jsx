@@ -44,7 +44,7 @@ const FormRegister = () => {
     }
 
 
-    return (<div className="Register-form-container">
+    return (<div className="Register-form-container contenedor">
 
             <form action="/" className="Auth-form" ref={form}>
                 <div className="Auth-form-content">

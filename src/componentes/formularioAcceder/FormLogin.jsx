@@ -46,7 +46,7 @@ function LoginForm(props) {
     }
 
     return (
-        <div className="Auth-form-container">
+        <div className="Auth-form-container contenedor">
             <form className="Auth-form" onSubmit={handelSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Sign In</h3>

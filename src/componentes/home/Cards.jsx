@@ -9,7 +9,7 @@ import React, {useEffect} from "react";
 
 function Cards(props) {
     return (
-<div >
+<div className="contenedor">
     <div id="carouselExampleRide" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
             <div className="carousel-item active">

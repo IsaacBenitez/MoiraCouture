@@ -56,7 +56,7 @@ function CrearProducto(props) {
                 product["id"] = data.id;
                 setShow(false);
                 props.newproduct(product);
-                alert('producto creado correctamente')
+                alert('Producto creado correctamente')
 
 
             } catch (error) {

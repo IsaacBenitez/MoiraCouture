@@ -1,29 +1,18 @@
 import React, { useContext } from 'react';
-import AppContext from '../../context/AppContext';  //TODO
+import AppContext from '../../context/AppContext';
 import '../../styles/CartOrderItem.scss';
 
 import icon from '../../assets/icons/icon_close.png';
-import {
-	Trash2,
-	Trash2Fill,
-	Trash3Fill,
-	TrashFill,
-	X,
-	XCircle,
-	XCircleFill,
-	XLg,
-	XSquare,
-	XSquareFill
-} from "react-bootstrap-icons";
+import {XLg} from "react-bootstrap-icons";
 
 
 
 
 
 const CartOrderItem = ({ product }) => {
-	const { removeFromCart } = useContext(AppContext)//TODO
+	const { removeFromCart } = useContext(AppContext)
 
-	const handleRemove = product => {//TODO
+	const handleRemove = product => {
 		removeFromCart(product)
 	}
 

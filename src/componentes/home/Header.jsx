@@ -1,11 +1,9 @@
 import React, {useState, useContext, useEffect} from 'react';
-import '../../styles/Header.scss';
 import {Link} from "react-router-dom";
 import AppContext from '../../context/AppContext';
 import CartTotalOrder from '../cartOrder/CartTotalOrder';
 
 const Header = (props) => {
-    const [clickChange, setClickChange] = useState(false);
 
     const {state} = useContext(AppContext);
 
@@ -21,12 +19,10 @@ const Header = (props) => {
         setIsLogged(props.isLogged)
     }, [props.isLogged])
 
-    const handleClickChange = () => {
-        setClickChange(!clickChange);
-    }
+
 
     return (
-        <div className='ContenedorHeader'>
+        <div  className='ContenedorHeader'>
             <div className="container py-2">
                 <header
                     className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -71,14 +67,14 @@ const Header = (props) => {
                             ?
                             <>
 
-                                    <Link to={"/Login"} className="link-light">
-                                        <button type="button" className="btn btn-outline-light me-3">
+                                    <Link to={"/Login"} className="link-light me-3">
+                                        <button type="button" className="btn btn-outline-light">
                                         Log in
                                         </button>
                                     </Link>
 
-                                    <Link to={"/Register"} className="link-light">
-                                        <button type="button" className="btn btn-outline-light me-3">
+                                    <Link to={"/Register"} className="link-light me-3">
+                                        <button type="button" className="btn btn-outline-light">
                                         Sign up
                                         </button>
                                     </Link>
@@ -89,22 +85,22 @@ const Header = (props) => {
                                 ?
                                 <>
 
-                                        <Link to={"/Login"} className="link-light">
-                                            <button type="button" className="btn btn-outline-light me-3" onClick={handleLogout}>
+                                        <Link to={"/Login"} className="link-light me-3">
+                                            <button type="button" className="btn btn-outline-light" onClick={handleLogout}>
                                             Logout
                                             </button>
                                         </Link>
 
-                                        <Link to={"/DashboardProductos"} className="link-light">
-                                            <button type="button" className="btn btn-outline-light me-3">
+                                        <Link to={"/DashboardProductos"} className="link-light me-3">
+                                            <button type="button" className="btn btn-outline-light">
                                             Dashboard
                                             </button>
                                         </Link>
 
                                 </>
                                 :
-                                    <Link to={"/Login"} className="link-secondary">
-                                        <button type="button" className="btn btn-outline-light me-3" onClick={handleLogout}>
+                                    <Link to={"/Login"} className="link-secondary me-3">
+                                        <button type="button" className="btn btn-outline-light" onClick={handleLogout}>
                                         Logout
                                         </button>
                                     </Link>
@@ -112,7 +108,7 @@ const Header = (props) => {
                         }
 
 
-                            <span style={{cursor: 'pointer'}} onClick={() => setClickChangeOrders(!clickChangeOrders)} >
+                            <span className="icon-pointer" onClick={() => setClickChangeOrders(!clickChangeOrders)} >
                               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                    className="links bi bi-handbag" viewBox="0 0 16 16">
                               <path
@@ -129,11 +125,8 @@ const Header = (props) => {
 
 
                     </div>
-                    {clickChange && <h1 style={{
-                        fontSize: '25px',
-                        backgroundColor: 'black',
-                        color: 'white',
-                    }}></h1>}{clickChangeOrders && <CartTotalOrder/>}
+
+                    {clickChangeOrders && <CartTotalOrder closeCart={setClickChangeOrders}/>}
 
                 </header>
             </div>

@@ -1,12 +1,16 @@
 
 
 .CartOrderItem {
-	display: grid;
+	display: flex;
 	grid-template-columns: auto 1fr auto auto;
 	gap: 16px;
 	margin-bottom: 24px;
 	align-items: center;
+	flex-direction: row;
+	justify-content: space-between;
+
 }
+
 .CartOrderItem figure {
 	margin: 0;
 }

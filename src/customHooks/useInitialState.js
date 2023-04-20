@@ -1,10 +1,11 @@
 import { useState } from "react";
 
-const initialState = {
-    cart: [],
-}
+
 
 const useInitialState = () => {
+    const initialState = {
+        cart: [],
+    }
     const [state, setState] = useState(initialState);
 
 
@@ -14,9 +15,6 @@ const useInitialState = () => {
         });
 
     };
-
-
-
 
 
     const removeFromCart = (product) => {

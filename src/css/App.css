@@ -9,9 +9,36 @@ html {
   background-color: var(--colorHtml);
 }
 
+.App {
+  display: flex;
+  flex-flow: column nowrap;
+  background-color: white;
+  min-height: 100vh;
+}
+
 .ContenedorHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 13%;
+  background-color: var(--colorHeaderFooter);
+  z-index: 999;
+}
+
+.contenedor {
+  flex-grow: 1;
+}
+
+.ContenedorFooter {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 13%;
   background-color: var(--colorHeaderFooter);
 }
+
 
 .links {
   color: var(--colorWhite) !important;
@@ -71,26 +98,20 @@ img {
 }
 
 
-.ContenedorFooter {
-  background-color: var(--colorHeaderFooter);
-}
-.App {
-  background-color: white;
-}
 
 .Auth-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
 }
 .Register-form-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 90vh;
+  height: 100vh;
 }
 
 .Auth-form {
@@ -137,5 +158,9 @@ label {
 
 .position-relative:hover .product-card__overlay {
   opacity: 1;
+}
+
+.icon-pointer{
+  cursor: pointer;
 }
 
