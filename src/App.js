@@ -1,7 +1,6 @@
 import './css/App.css'
 import {Route, Routes} from "react-router-dom";
 import Header from './componentes/home/Header';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import GeneralCatalog from './componentes/home/GeneralCatalog';
 
 

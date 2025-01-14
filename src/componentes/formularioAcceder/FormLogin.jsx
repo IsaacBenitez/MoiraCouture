@@ -1,7 +1,8 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import login from '../../requests/login'
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import jwtDecode from "jwt-decode";
+import { Link } from 'react-router-dom';
 
 
 function LoginForm(props) {
@@ -38,7 +39,7 @@ function LoginForm(props) {
         } catch (error) {
 
 
-            let {data} = error.response;
+            let { data } = error.response;
             alert(data.error)
 
         }
@@ -49,9 +50,9 @@ function LoginForm(props) {
         <div className="Auth-form-container contenedor">
             <form className="Auth-form" onSubmit={handelSubmit}>
                 <div className="Auth-form-content">
-                    <h3 className="Auth-form-title">Sign In</h3>
+                    <h3 className="Auth-form-title">Inicia Sesión</h3>
                     <div className="form-group mt-3">
-                        <label>Email address</label>
+                        <label>Correo electrónico</label>
                         <input
                             type="email"
                             className="form-control mt-1"
@@ -61,7 +62,7 @@ function LoginForm(props) {
                         />
                     </div>
                     <div className="form-group mt-3">
-                        <label>Password</label>
+                        <label>Contraseña</label>
                         <input
                             type="password"
                             className="form-control mt-1"
@@ -72,13 +73,16 @@ function LoginForm(props) {
                     </div>
                     <div className="d-grid gap-2 mt-3">
                         <button type="submit" className="btn btn-dark">
-                            Iniciar sesión
+                            Ingresar
                         </button>
+                    </div>
+                    <div className='mt-3 text-center text-dark'>
+                        ¿Aún no tienes cuenta?<Link to={"/Register"} className="link-dark ms-2 me-2 mb-2 mb-md-0">Registrarme</Link>
                     </div>
                 </div>
             </form>
         </div>
-)
+    )
 }
 
 export default LoginForm
