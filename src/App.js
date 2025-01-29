@@ -1,5 +1,5 @@
 import './css/App.css'
-import {Route, Routes} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from './componentes/home/Header';
 import GeneralCatalog from './componentes/home/GeneralCatalog';
 
@@ -14,7 +14,7 @@ import Footer from './componentes/home/footer';
 import IndexDashboard from "./componentes/dashboard";
 import LoginForm from "./componentes/formularioAcceder/FormLogin";
 import PrivateRoute from "./componentes/PrivateRoute/PrivateRoute";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import jwtDecode from "jwt-decode";
 
 
@@ -24,36 +24,37 @@ function App() {
 
     useEffect(() => {
         let infoUser = window.localStorage.getItem('login')
-        if(infoUser){
+        if (infoUser) {
             let token = JSON.parse(infoUser).token
             let rolUsuario = jwtDecode(token).rol
             setRol(rolUsuario)
             setIsLogged(true)
-        }else{
+        } else {
             setIsLogged(false);
         }
-    },[isLogged])
+    }, [isLogged])
 
     const initialState = useInitialState();
     return (
-        <div className="App">
-
+        <div className="d-flex flex-column min-vh-100">
             <AppContext.Provider value={initialState}>
-                <Header isLogged={isLogged} setIsLogged={setIsLogged} rol={rol}/>
-                <Routes>
-                    <Route path="/" element={<Cards></Cards>}/>
-                    <Route path="/Hombre" element={<GeneralCatalog/>}/>
-                    <Route path="/Mujer" element={<GeneralCatalog Genero={"Mujer"}/>}/>
-                    <Route path="/Login" element={<LoginForm setIsLogged={setIsLogged}/>} />
-                    <Route path="/Register" element={<Register/>}/>
-                    <Route path="/DashboardProductos" element={
-                        <PrivateRoute>
-                            <IndexDashboard/>
-                        </PrivateRoute>
-                    }
-                    />
-                </Routes>
-                <Footer/>
+                <Header isLogged={isLogged} setIsLogged={setIsLogged} rol={rol} />
+                <div className="flex-grow-1">
+                    <Routes>
+                        <Route path="/" element={<Cards></Cards>} />
+                        <Route path="/Hombre" element={<GeneralCatalog />} />
+                        <Route path="/Mujer" element={<GeneralCatalog Genero={"Mujer"} />} />
+                        <Route path="/Login" element={<LoginForm setIsLogged={setIsLogged} />} />
+                        <Route path="/Register" element={<Register />} />
+                        <Route path="/DashboardProductos" element={
+                            <PrivateRoute>
+                                <IndexDashboard />
+                            </PrivateRoute>
+                        }
+                        />
+                    </Routes>
+                </div>
+                <Footer className="mt-auto" />
             </AppContext.Provider>
         </div>
     );

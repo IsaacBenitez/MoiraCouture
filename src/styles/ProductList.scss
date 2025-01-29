@@ -1,16 +1,16 @@
 
-.ProductList {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, 25%);
-	grid-gap: 0;
-	justify-content: center;
-	justify-items: center;
-	margin: 0 0 0 0;
-	background-color: white;
-}
+// .ProductList {
+// 	display: grid;
+// 	grid-template-columns: repeat(auto-fill, 25%);
+// 	grid-gap: 0;
+// 	justify-content: center;
+// 	justify-items: center;
+// 	margin: 0 0 0 0;
+// 	background-color: white;
+// }
 
-@media (max-width: 640px) {
-	.ProductList {
-		grid-template-columns: repeat(auto-fill, 140px);
-	}
-}
+// @media (max-width: 640px) {
+// 	.ProductList {
+// 		grid-template-columns: repeat(auto-fill, 140px);
+// 	}
+// }

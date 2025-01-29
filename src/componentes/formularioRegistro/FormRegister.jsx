@@ -37,43 +37,41 @@ const FormRegister = () => {
                 alert(message)
             }
 
-            console.log(error)
-
         }
-        console.log(data);
     }
 
 
-    return (<div className="Register-form-container contenedor">
+    return (
+    <div className="Register-form-container contenedor">
 
-            <form action="/" className="Auth-form" ref={form}>
+            <form action="/" className="Auth-form" ref={form} onSubmit={handleSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Regístrate</h3>
                     <div className="form-group mt-3">
-                        <label htmlFor="nombre">Nombre</label>
-                        <input name="nombre" type="text" className="form-control" id="validationDefault01"
+                        <label htmlFor="nombre-input">Nombre</label>
+                        <input name="nombre" type="text" className="form-control" id="nombre-input"
                                placeholder="Nombre" required/>
                     </div>
                     <div className="form-group mt-3">
-                        <label htmlFor="apellido">Apellido</label>
-                        <input name="apellido" type="text" className="form-control" id="validationDefault02"
+                        <label htmlFor="apellido-input">Apellido</label>
+                        <input name="apellido" type="text" className="form-control" id="apellido-input"
                                placeholder="Apellido" required/>
                     </div>
                     <div className="form-group mt-3">
-                        <label htmlFor="correo">Correo</label>
-                        <input name="correo" type="text" className="form-control" id="validationDefaultCorreo"
+                        <label htmlFor="correo-input">Correo</label>
+                        <input name="correo" type="email" className="form-control" id="correo-input"
                                placeholder="Correo Electronico"
-                               aria-describedby="inputGroupPrepend2" required/>
+                               required/>
                     </div>
                     <div className="form-group mt-3">
-                        <label htmlFor="correo">Contraseña</label>
+                        <label htmlFor="password-input">Contraseña</label>
                         <input name="password" type="password" className="form-control"
-                               id="validationDefaultPassword" placeholder="Password"
-                               aria-describedby="inputGroupPrepend2" required/>
+                               id="password-input" placeholder="Password"
+                               required/>
                     </div>
                     <div className="form-group mt-3">
-                        <label htmlFor="birthDate">Fecha de nacimiento</label>
-                        <input name="birthDate" type="date" className="form-control" id="validationDefault03"
+                        <label htmlFor="birthDate-input">Fecha de nacimiento</label>
+                        <input name="birthDate" type="date" className="form-control" id="birthDate-input"
                                placeholder="Fecha de nacimiento" required/>
                     </div>
 
@@ -84,8 +82,8 @@ const FormRegister = () => {
                                 Estoy de acuerdo con el tratamiento de mis datos
                             </label>
                         </div>
-                        <button className="align-self-center col btn btn-dark" type="submit"
-                                onClick={handleSubmit}>Registrarme
+                        <button className="btn btn-dark" type="submit">
+                            Registrarme
                         </button>
                     </div>
                 </div>

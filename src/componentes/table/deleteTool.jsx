@@ -12,7 +12,7 @@ function DeleteTool(props) {
             let token = JSON.parse(login).token
 
             try {
-                if (window.confirm('Are you sure you wish to delete this item?')) {
+                if (window.confirm('Are you sure you want to delete this item?')) {
 
                     let data = await deleteProduct(props.id, token)
                     props.delproduct(props.id);

@@ -11,7 +11,8 @@ function MainPage(props) {
     // esta pendiente de cargar el componente cada que reciba datos
     useEffect(() => {
         if(props.data){
-            setData(props.data)}
+            setData(props.data)
+        }
     },[props.data])
 
 
@@ -48,6 +49,7 @@ function MainPage(props) {
             <Table
                 editproduct={editProduct}
                 delproduct={delProduct}
+                setData={setData}
                 data={data}
                 name={props.name}
                 columns={props.columns}

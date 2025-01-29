@@ -1,8 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import '../../styles/CartOrderItem.scss';
-
-import icon from '../../assets/icons/icon_close.png';
 import {XLg} from "react-bootstrap-icons";
 
 

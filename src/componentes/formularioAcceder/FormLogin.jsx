@@ -10,7 +10,7 @@ function LoginForm(props) {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    async function handelSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault()
 
         const user = {
@@ -48,7 +48,7 @@ function LoginForm(props) {
 
     return (
         <div className="Auth-form-container contenedor">
-            <form className="Auth-form" onSubmit={handelSubmit}>
+            <form className="Auth-form" onSubmit={handleSubmit}>
                 <div className="Auth-form-content">
                     <h3 className="Auth-form-title">Inicia Sesión</h3>
                     <div className="form-group mt-3">
@@ -59,6 +59,7 @@ function LoginForm(props) {
                             placeholder="Enter email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -69,6 +70,7 @@ function LoginForm(props) {
                             placeholder="Enter password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
                     <div className="d-grid gap-2 mt-3">

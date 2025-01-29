@@ -1,11 +1,13 @@
 import Tools from "./tools";
 
 function Body(props) {
+
+    
     return (
-        <tbody>
+        <tbody >
         {props.data.length  > 0 && props.data.map((row, rowIndex) => {
             return (
-                <tr key={rowIndex}>
+                <tr key={row.id}>
                     {props.columns.map( (column) => {
                         if (column === "imagen") {
                             return (

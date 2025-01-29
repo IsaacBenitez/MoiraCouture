@@ -9,13 +9,6 @@ html {
   background-color: var(--colorHtml);
 }
 
-.App {
-  display: flex;
-  flex-flow: column nowrap;
-  background-color: white;
-  min-height: 100vh;
-}
-
 .ContenedorHeader {
   position: sticky;
   top: 0;
@@ -24,10 +17,6 @@ html {
   height: 13%;
   background-color: var(--colorHeaderFooter);
   z-index: 999;
-}
-
-.contenedor {
-  flex-grow: 1;
 }
 
 .ContenedorFooter {
@@ -164,3 +153,6 @@ label {
   cursor: pointer;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}

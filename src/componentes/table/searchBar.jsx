@@ -6,7 +6,6 @@ function SearchBar({ setData, data, columns}) {
 
     const onChangeSearchField = (e) => {
         setSearchField(e.target.value);
-        console.log(e.target.value)
         let results = Search(data, columns, e.target.value);
         setData(results);
     };

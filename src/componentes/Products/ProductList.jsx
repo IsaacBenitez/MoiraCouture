@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../../styles/ProductList.scss'; //TODO
-import ProductItemMujer from './ProductItemMujer';
-import ProductItemHombre from './ProductItemHombre';
+import ProductItem from './ProductItem';
 import getAllProducts from "../../requests/getAllProducts";
 
 
@@ -15,36 +14,16 @@ const ProductList = (props) => {
 		})
 	}, []);
 
-	if (props.Genero === "Mujer") {
+	return (
+		<div className="row">
+			{
+				data
+					.filter(product => product.sexo === (props.Genero === "Mujer" ? "F" : "M"))
+					.map(product => <ProductItem product={product} key={product.id} />)
+			}
+		</div>
 
-		return (
-
-			<section className="main-container py-3">
-				<h2 className="pb-2 border-bottom text-first mx-5">MUJER</h2>
-				<div className="ProductList py-5" >
-					{data.map(product => (
-						<ProductItemMujer product={product} key={product.id} Genero={props.Genero} />
-					))}
-				</div>
-			</section>
-
-		);
-	}
-
-	else
-
-		return (
-
-			<section className="main-container py-3">
-				<h2 className="pb-2 border-bottom text-first mx-5">HOMBRE</h2>
-				<div className="ProductList py-5">
-					{data.map(product => (
-						<ProductItemHombre product={product} key={product.id} Genero={props.Genero} />
-					))}
-				</div>
-			</section>
-
-		);
+	);
 }
 
 export default ProductList;
